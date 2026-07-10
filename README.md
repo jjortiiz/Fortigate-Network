@@ -19,6 +19,8 @@ El objetivo principal de este laboratorio es implementar, configurar y asegurar 
 ## 2. Topología
 La topología implementada en el laboratorio simula un entorno perimetral conectado a un proveedor de Internet (NUBE ISP), interconectando una zona LAN de usuarios mediante un switch de distribución (SW-1) y una zona de servidores que contiene un servidor web (WINDOWS SERVER).
 
+![Topología del Laboratorio](assets/img/4. Topologia.png)
+
 ### 2.1 Tabla de Direccionamiento
 
 | Dispositivo | Interfaz | IP | Gateway | Máscara | Descripción |
