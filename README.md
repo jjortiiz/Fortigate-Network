@@ -7,7 +7,6 @@
 * **Materia:** Seguridad de Redes
 * **Docente:** Jonathan Rondon
 * **Carrera:** Seguridad Informática
-* **Fecha:** Junio 21, 2025
 
 ---
 
