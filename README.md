@@ -54,10 +54,14 @@ La topología implementada en el laboratorio simula un entorno perimetral conect
 ### 3.2 Perfiles de Seguridad (UTM / NGFW)
 
 #### Filtro Web (Web Filter)
+![Web Filter](https://github.com/jjortiiz/Fortigate-Network/blob/df002867625f7538afd0b184c6ec3d6fcd3ac323/imagenes/5.%20Politica%20Bloqueo%20Dominio.png)
+
 * Creación del perfil `bloqueo_dominios_itla` bajo la modalidad *Filter-based*.
 * Configuración de un **Static URL Filter** para bloquear explícitamente el dominio de `itla.edu.do`, subdominios y la plataforma `youtube.com` mediante el uso de reglas de tipo *Wildcard* en acción *Block*.
-
+* 
 #### Control de Aplicaciones (Application Control)
+![AppControl](https://github.com/jjortiiz/Fortigate-Network/blob/df002867625f7538afd0b184c6ec3d6fcd3ac323/imagenes/6.%20Politica%20Bloqueo%20Social%20Media.png)
+
 * Implementación de sensores destinados a la restricción de redes sociales y plataformas multimedia.
 * Configuración de bloqueos específicos (*Application and Filter Overrides*) haciendo énfasis en firmas comunes como:
   * **Facebook** (incluyendo sub-firmas como Facebook App, Chat y Login)
@@ -66,6 +70,8 @@ La topología implementada en el laboratorio simula un entorno perimetral conect
 * Se configuró un filtro restrictivo prioritario para mitigar el uso de llamadas y videollamadas de voz sobre IP (**WhatsApp VoIPCall**).
 
 #### Política de Seguridad DoS y Bloqueo de Escaneos
+![Anti-Escaner](https://github.com/jjortiiz/Fortigate-Network/blob/df002867625f7538afd0b184c6ec3d6fcd3ac323/imagenes/9.%20Politica%20Anti%20Escaneer.png)
+
 * Configuración de umbrales estrictos dentro de las políticas de firewall DoS frente a anomalías de nivel de capa 3 y 4 (*L4 Anomalies*).
 * Inclusión de reglas de mitigación con acción *Block* para las firmas:
   * `tcp_syn_flood` (Umbral: 2000)
@@ -74,6 +80,8 @@ La topología implementada en el laboratorio simula un entorno perimetral conect
 * Bloqueo verificado de manera efectiva impidiendo el reconocimiento y escaneo de puertos de la infraestructura mediante herramientas de auditoría externa como **Nmap**.
 
 #### Web Application Firewall (WAF)
+![Politica WAF](https://github.com/jjortiiz/Fortigate-Network/blob/df002867625f7538afd0b184c6ec3d6fcd3ac323/imagenes/13.%20Politica%20WAF.png)
+
 * Despliegue del perfil `WAF Server` protegiendo de forma dedicada el segmento del Servidor Web (`WINDOWS SERVER`).
 * Activación y puesta en marcha en modo *Block* de firmas de severidad alta para la contención de ataques web automatizados y manuales, tales como inyección SQL (**SQL Injection**) y explotación de vulnerabilidades conocidas (**Known Exploits**).
 
@@ -82,21 +90,29 @@ La topología implementada en el laboratorio simula un entorno perimetral conect
 ## 4. Comprobaciones de Funcionamiento
 
 ### 4.1 Verificación de Bloqueo de Redes Sociales (Instagram)
+![Evidencia Social Media](https://github.com/jjortiiz/Fortigate-Network/blob/df002867625f7538afd0b184c6ec3d6fcd3ac323/imagenes/8.%20Evidencia%20Bloqueo%20Social%20Media.png)
+
 Al intentar acceder a la dirección `http://instagram.com` desde un host interno, la conexión es interceptada de manera exitosa por el FortiGate mostrando el aviso correspondiente:
 * **Mensaje:** *Application Blocked. You have attempted to use an application that violates your Internet usage policy.*
 * **Aplicación Identificada:** Instagram
 * **Categoría:** Social Media
 
 ### 4.2 Verificación de Filtro Web (itla.edu.do)
+![Evidencia Bloqueo Dominio](https://github.com/jjortiiz/Fortigate-Network/blob/df002867625f7538afd0b184c6ec3d6fcd3ac323/imagenes/7.%20Evidencia%20Bloqueo%20Dominio.png)
+
 Al realizar una petición HTTP hacia el dominio local restringido `http://itla.edu.do`, la herramienta perimetral bloquea la carga de la página mediante las firmas locales:
 * **Mensaje:** *Web Page Blocked. The page you have requested has been blocked because the URL is banned.*
 * **Filtro Origen:** *Local URLfilter Block*
 
 ### 4.3 Verificación Anti-Escaneos (Nmap)
+![Evidencia Anti-Escaner](https://github.com/jjortiiz/Fortigate-Network/blob/df002867625f7538afd0b184c6ec3d6fcd3ac323/imagenes/10.%20Evidencia%20Anti%20Escaner.png)
+
 Al ejecutar una inspección y escaneo de puertos mediante `nmap -sS -P0 8.61.10.130` desde una máquina de auditoría (Kali Linux) hacia el entorno interno, los mecanismos de prevención perimetral bloquean los sondeos de red evitando la materialización y recolección de información sensible de los activos:
 * **Resultado del escaneo:** *Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn. Nmap done: 1 IP address (0 hosts up) scanned.*
 
 ### 4.4 Verificación de Protección WAF (Mitigación SQLi)
+![Evidencia WAF](https://github.com/jjortiiz/Fortigate-Network/blob/df002867625f7538afd0b184c6ec3d6fcd3ac323/imagenes/12.%20Evidencia%20WAF.png)
+
 Al simular un ataque web mediante la inyección de sentencias lógicas maliciosas en los parámetros de la URL (`http://8.61.10.130/?id=1 OR 1=1`), el módulo de Firewall de Aplicaciones Web detiene inmediatamente la transferencia de datos:
 * **Mensaje:** *Web Application Firewall. This transfer is blocked by a Web Application Firewall.*
 * **Event ID:** 30000040
