@@ -57,7 +57,7 @@ La topología implementada en el laboratorio simula un entorno perimetral conect
 
 * Creación del perfil `bloqueo_dominios_itla` bajo la modalidad *Filter-based*.
 * Configuración de un **Static URL Filter** para bloquear explícitamente el dominio de `itla.edu.do`, subdominios y la plataforma `youtube.com` mediante el uso de reglas de tipo *Wildcard* en acción *Block*.
-* 
+  
 #### Control de Aplicaciones (Application Control)
 ![AppControl](https://github.com/jjortiiz/Fortigate-Network/blob/df002867625f7538afd0b184c6ec3d6fcd3ac323/imagenes/6.%20Politica%20Bloqueo%20Social%20Media.png)
 
