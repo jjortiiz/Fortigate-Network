@@ -19,7 +19,7 @@ El objetivo principal de este laboratorio es implementar, configurar y asegurar 
 ## 2. Topología
 La topología implementada en el laboratorio simula un entorno perimetral conectado a un proveedor de Internet (NUBE ISP), interconectando una zona LAN de usuarios mediante un switch de distribución (SW-1) y una zona de servidores que contiene un servidor web (WINDOWS SERVER).
 
-![Topología](assets/img/4. Topologia.png)
+![Topologia](https://github.com/jjortiiz/Fortigate-Network/blob/1bd6787e3e6801139f429f4695250c00469f2982/imagenes/4.%20Topologia.png)
 
 ### 2.1 Tabla de Direccionamiento
 
