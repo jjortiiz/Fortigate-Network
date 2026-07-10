@@ -9,7 +9,9 @@
 * **Carrera:** Seguridad Informática
 
 ---
+[![Video YouTube](https://img.shields.io/badge/YouTube-Ver_Video_de_Sustentación_(Máx._8_min)-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=TLsy1mJEWYU)
 
+---
 ## 1. Objetivo
 El objetivo principal de este laboratorio es implementar, configurar y asegurar una infraestructura de red perimetral utilizando un firewall FortiGate (FTG-SR) gestionado totalmente a través de su interfaz gráfica (GUI). Se busca proporcionar acceso seguro a Internet para los usuarios internos, aislar y proteger la zona de servidores (DMZ) aplicando políticas estrictas de control de acceso, y desplegar perfiles de seguridad avanzados (UTM/NGFW) como control de aplicaciones, filtrado web, IPS y WAF para mitigar amenazas y bloquear tráfico no autorizado.
 
