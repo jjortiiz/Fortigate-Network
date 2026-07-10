@@ -41,6 +41,11 @@ La topología implementada en el laboratorio simula un entorno perimetral conect
 ## 3. Configuración y Políticas de Seguridad
 
 ### 3.1 Interfaces de Red y Enrutamiento
+
+![Interfaces con IP](https://github.com/jjortiiz/Fortigate-Network/blob/4a2c637ee031c6d18c0cdb821766149aeb004f80/imagenes/1.%20Asignacion%20de%20IP.png)
+![Ruta Estatica](https://github.com/jjortiiz/Fortigate-Network/blob/4a2c637ee031c6d18c0cdb821766149aeb004f80/imagenes/2.%20Ruta%20Estatica.png)
+![Trafico HTTP](https://github.com/jjortiiz/Fortigate-Network/blob/4a2c637ee031c6d18c0cdb821766149aeb004f80/imagenes/11.%20Politica%20Trafico%20Http.png)
+
 * Se configuró la asignación correcta de direcciones IP en las interfaces físicas del FortiGate (`port1` para WAN, `port2` para Usuarios y `port3` para Servidores).
 * Activación del servicio **DHCP Server** en el `port2` para la asignación dinámica de direccionamiento a los clientes internos (`PC-01`, `PC-02`, `PC-03 Linux` y `VPC`).
 * Validación y establecimiento de una **Ruta Estática** (`0.0.0.0/0`) apuntando al gateway `192.168.5.2` a través de la interfaz `port1` (WAN).
