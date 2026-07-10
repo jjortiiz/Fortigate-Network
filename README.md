@@ -9,7 +9,7 @@
 * **Carrera:** Seguridad Informática
 
 ---
-[![Video YouTube](https://img.shields.io/badge/YouTube-Ver_Video_de_Sustentación_(Máx._8_min)-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=TLsy1mJEWYU)
+[![Video YouTube](https://img.shields.io/badge/YouTube-Haz_Clic_en_el_enlace-FF0000?style=for-the-badge&logo=youtube&logoColor=white)](https://www.youtube.com/watch?v=TLsy1mJEWYU)
 
 ---
 ## 1. Objetivo
